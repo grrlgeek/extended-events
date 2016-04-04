@@ -16,3 +16,16 @@ ALTER EVENT SESSION [Database File I/O] ON SERVER
 STATE = STOP;
 
 DROP EVENT SESSION [Database File I/O] ON SERVER; 
+
+
+
+--Trying to make this work 
+ALTER EVENT SESSION [Database File I/O] ON SERVER 
+DROP EVENT sqlserver.file_read_completed, DROP EVENT sqlserver.file_write_completed
+ALTER EVENT SESSION [Database File I/O] ON SERVER 
+ADD EVENT sqlserver.file_read_completed(SET collect_io_data=(1),collect_path=(1)
+    ACTION(sqlserver.client_app_name,sqlserver.client_hostname,sqlserver.database_id,sqlserver.database_name,sqlserver.plan_handle,sqlserver.sql_text)
+    WHERE ([sqlserver].[database_id]>(5))), ADD EVENT sqlserver.file_write_completed(SET collect_path=(1)
+    ACTION(sqlserver.client_app_name,sqlserver.client_hostname,sqlserver.database_id,sqlserver.database_name,sqlserver.plan_handle,sqlserver.sql_text)
+    WHERE ([sqlserver].[database_id]>(5)))
+GO

@@ -24,7 +24,7 @@ EXEC @ReturnCode =  msdb.dbo.sp_add_job @job_name=N'Start 15SecondIOError',
 		@description=N'No description available.', 
 		@category_name=N'Database Maintenance', 
 		@owner_login_name=N'sa', 
-		@notify_email_operator_name=N'jborland@concurrency.com', @job_id = @jobId OUTPUT
+		@notify_email_operator_name=N'Jes Borland', @job_id = @jobId OUTPUT
 IF (@@ERROR <> 0 OR @ReturnCode <> 0) GOTO QuitWithRollback
 /****** Object:  Step [Start session]    Script Date: 12/22/2015 9:19:07 AM ******/
 EXEC @ReturnCode = msdb.dbo.sp_add_jobstep @job_id=@jobId, @step_name=N'Start session', 

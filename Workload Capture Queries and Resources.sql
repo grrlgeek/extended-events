@@ -1,6 +1,6 @@
 /* Workload for 'Capture queries and resources' */
 
-USE AdventureWorks2014;
+USE AdventureWorks2012;
 GO 
 
 EXEC [dbo].[uspGetManagerEmployees] 5 ;

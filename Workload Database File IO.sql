@@ -1,7 +1,6 @@
 /* Workload for Database File I/O */
---To do: on presentation laptop, need multiple databases, and one databaes with multiple files 
 
-USE AdventureWorks2014;
+USE AdventureWorks2012;
 GO 
 
 /* DANGER, WILL ROBINSON */
@@ -28,4 +27,5 @@ DELETE FROM TestForFileIO
 WHERE Superhero = 'Batman';
 
 --Cleanup 
-DROP TABLE TestForFileIO;
+DROP TABLE TestForFileIO; 
+

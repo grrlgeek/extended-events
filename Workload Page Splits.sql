@@ -1,6 +1,6 @@
 /* Workload for Page Splits */
 
-USE AdventureWorks2014;
+USE AdventureWorks2012;
 GO 
 
 CREATE TABLE TestForPageSplits 
@@ -15,10 +15,14 @@ GO 5000
 
 SELECT *
 FROM TestForPageSplits; 
---49 pages
+--49 pages 
+
+--View target data; close  
 
 UPDATE TestForPageSplits 
-SET Value = 'BlahBlahBlahBlahBlah';
+SET Value = 'BlahBlahBlahBlahBlah'; 
+
+--Reopen View live data; add add'l columns; save view 
 
 SELECT 
     s.Name AS SchemaName,
@@ -43,7 +47,7 @@ VALUES (NEWID(), 'Blah');
 GO 500
 --65 pages 
 
---View data 
+--Reopen View target data 
 
 --Now query to get useful info 
 --Which file? 

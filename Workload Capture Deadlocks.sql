@@ -1,6 +1,6 @@
 /* Workload for Capture Deadlock Graphs */ 
 
-USE AdventureWorks2014;
+USE AdventureWorks2012;
 GO
 
 -- step 1: open new query window (window 1) and run only the following 3 lines
