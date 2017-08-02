@@ -1,6 +1,6 @@
 /* Workload for Wait Statistics */
 
-USE AdventureWorks2012;
+USE AdventureWorks2014;
 GO 
 
 --Read 

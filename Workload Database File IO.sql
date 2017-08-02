@@ -1,6 +1,6 @@
 /* Workload for Database File I/O */
 
-USE AdventureWorks2012;
+USE AdventureWorks2014;
 GO 
 
 /* DANGER, WILL ROBINSON */
@@ -23,8 +23,12 @@ CREATE TABLE TestForFileIO
 INSERT INTO TestForFileIO 
 VALUES ('Wonder Woman', 'Paradise Island'), ('Superman', 'Krypton'), ('Batman', 'Earth');
 
+CHECKPOINT
+
 DELETE FROM TestForFileIO 
 WHERE Superhero = 'Batman';
+
+CHECKPOINT
 
 --Cleanup 
 DROP TABLE TestForFileIO; 
