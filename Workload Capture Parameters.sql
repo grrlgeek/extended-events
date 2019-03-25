@@ -1,7 +1,7 @@
 /* Capture Parameters - workload */
 
 /* Execute a stored proc several times, with different parameters */ 
-USE AdventureWorks2014;
+USE AdventureWorks2016;
 GO 
 
 exec uspGetBillOfMaterials @StartProductID = 723, @CheckDate = '2009/01/01';
